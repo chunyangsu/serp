@@ -1,0 +1,51 @@
+{
+  "data": {
+    "products": [{
+        "id": 11,
+        "name": "联想电脑",
+        "brand": "联想",
+        "model": "z580",
+        "price": "6000",
+        "status": "old",
+        "children": [{
+          "id": 5,
+          "name": "华为电脑",
+          "brand": "华为",
+          "model": "MateBook E",
+          "price": "4099",
+          "status": "new"
+        }, {
+          "id": 6,
+          "name": "米笔记本电脑",
+          "brand": "小米",
+          "model": "小米笔记本",
+          "price": "4699",
+          "status": "new"
+        }]
+      },
+      {
+        "id": 12,
+        "name": "小米9",
+        "brand": "小米",
+        "model": "Mi9",
+        "price": "3800"
+      }, {
+        "id": 13,
+        "name": "空调",
+        "brand": "美的",
+        "model": "WXDN8A1",
+        "price": "2999"
+      }, {
+        "id": 14,
+        "name": "洗衣机",
+        "brand": "小天鹅",
+        "model": "TG80V80WDG",
+        "price": "2360"
+      }
+    ]
+  },
+  "meta": {
+    "msg": "获取成功",
+    "status": 200
+  }
+}
