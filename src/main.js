@@ -13,10 +13,13 @@ import axios from 'axios'
 
 // 引入全局公用样式(css文件可直接写路径)
 import '@/styles/index.css'
+// 引入全局文件
+import '@/utils/global'
+import '@/permission.js'
 
 // 引入mock数据，关闭则注释该行
 require('./mock')
-
+// 控制路由表的js文件
 Vue.prototype.$http = axios
 
 // 安装ElementUI的插件
