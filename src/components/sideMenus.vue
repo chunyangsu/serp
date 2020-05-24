@@ -7,7 +7,10 @@
     >
       <!-- 一级菜单的情况 -->
       <template v-if="item.children && item.children.length === 1">
-        <router-link :to="item.path + '/' + item.children[0].path">
+        <router-link
+          :to="item.path + '/' + item.children[0].path"
+          :key="item.path"
+        >
           <!--           index跟浏览器地址对应，这样菜单才能显示选中状态  -->
           <el-menu-item :index="item.path + '/' + item.children[0].path">
             <template slot="title">
@@ -25,7 +28,10 @@
       <!-- 一级菜单的情况 end-->
       <!-- 多级菜单 -->
       <template v-else>
-        <el-submenu :index="item.path">
+        <el-submenu
+          :index="item.path"
+          :key="item.path"
+        >
           <template slot="title">
             <i :class="item.meta.icon"></i>
             {{ item.meta.title }}
@@ -40,11 +46,15 @@
               <side-menus
                 :routes="[itemChild]"
                 class="nest-menu"
+                :key="itemChild.path"
               ></side-menus>
             </template>
             <!-- 2级菜单时-->
             <template v-else>
-              <router-link :to="item.path + '/' + itemChild.path">
+              <router-link
+                :to="item.path + '/' + itemChild.path"
+                :key="itemChild.path"
+              >
                 <el-menu-item :index="item.path + '/' + itemChild.path">
                   <i
                     v-if="itemChild.meta.icon"

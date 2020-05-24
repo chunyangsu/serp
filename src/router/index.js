@@ -87,6 +87,7 @@ export const permissionRouter = [{
 }]
 
 export default new Router({
+  mode: 'history',
   routes: fixedRouter
 })
 // export default new Router({
