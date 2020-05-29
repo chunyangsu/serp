@@ -1,10 +1,6 @@
 <template>
   <div class="load_wapper">
-    <el-form
-      class="form_wapper"
-      size="mini"
-      :model="formModel"
-    >
+    <el-form class="form_wapper" size="mini" :model="formModel">
       <el-form-item label="用户名:">
         <el-input v-model="formModel.user"></el-input>
       </el-form-item>
@@ -12,11 +8,7 @@
         <el-input v-model="formModel.password"></el-input>
       </el-form-item>
       <el-form-item align="center">
-        <el-button
-          @click="loadBtn"
-          type="primary"
-          plain
-        > 登录</el-button>
+        <el-button @click="loadBtn" type="primary" plain> 登录</el-button>
       </el-form-item>
       <span>管理者：admin,密码：1</span>
       <br />
@@ -26,9 +18,7 @@
 </template>
 <script>
 export default {
-  components: {
-
-  },
+  components: {},
   data() {
     return {
       formModel: {
@@ -49,11 +39,8 @@ export default {
       })
     }
   },
-  mounted() {
-
-  }
+  mounted() {}
 }
-
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>

@@ -1,17 +1,17 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // 导入登录页组件
-const layout = () => import('@/components/layout')
+const layout = () => import('@/views/layout/layout')
 // 登录页
-const reload = () => import('@/components/reLoad')
-
+const login = () => import('@/views/login/login')
 const main = () => import('@/views/index')
+
 Vue.use(Router)
 
 // 固定的路由表
 export const fixedRouter = [{
   path: '',
-  component: reload,
+  component: login,
   hidden: true
 }, {
   path: '',
@@ -80,7 +80,7 @@ export const permissionRouter = [{
     children: [{
       path: 'SpecManage',
       name: 'SpecManage',
-      component: () => import('@/views/product/param/SpecManage'),
+      component: () => import('@/views/product/param/SpecManage/SpecManage'),
       meta: {
         title: '规格管理',
         icon: 'el-icon-menu',
@@ -90,7 +90,7 @@ export const permissionRouter = [{
     {
       path: 'UnitManage',
       name: 'UnitManage',
-      component: () => import('@/views/product/param/UnitManage'),
+      component: () => import('@/views/product/param/UnitManage/UnitManage'),
       meta: {
         title: '参数单位',
         icon: 'el-icon-menu',
@@ -101,7 +101,7 @@ export const permissionRouter = [{
   }, {
     path: 'ProductManage',
     name: 'ProductManage',
-    component: () => import('@/views/product/ProductManage'),
+    component: () => import('@/views/product/ProductManage/ProductManage'),
     meta: {
       title: '产品管理',
       icon: 'el-icon-menu',

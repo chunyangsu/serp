@@ -5,7 +5,7 @@
       <!-- 一级菜单的情况 -->
       <template v-if="item.children && item.children.length === 1">
         <router-link :to="item.path + '/' + item.children[0].path" :key="item.path">
-          <!--           index跟浏览器地址对应，这样菜单才能显示选中状态  -->
+          <!-- index跟浏览器地址对应，这样菜单才能显示选中状态  -->
           <el-menu-item :index="item.path + '/' + item.children[0].path">
             <template slot="title">
               <!-- 设置icon -->
