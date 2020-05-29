@@ -16,7 +16,6 @@
           </el-menu-item>
         </router-link>
       </template>
-      <!-- 一级菜单的情况 end-->
       <!-- 多级菜单 -->
       <template v-else>
         <el-submenu :index="item.path" :key="item.path">
@@ -61,7 +60,6 @@ export default {
       menus: []
     }
   },
-
   mounted() {
     this.menus = this.routes
     console.log(this.menus)

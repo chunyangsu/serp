@@ -9,15 +9,16 @@ var addRouFlag = false
 
 router.beforeEach((to, from, next) => {
   // 取到用户的角色
-  let GetRole = localStorage.getItem('userRole')
+  let getRole = localStorage.getItem('userRole')
   // 如果登录了
-  if (GetRole && GetRole !== 'unload') {
+  if (getRole && getRole !== '') {
     next() // next()方法后的代码也会执行
     // 1. 如果路由表 没根据角色进行筛选，就筛选一次
     if (!addRouFlag) {
       addRouFlag = true
       // 2. 根据用户的角色，和需要动态展示的路由，生成符合用户角色的路由
-      var getRoutes = baseRoleGetRouters(permissionRouter, GetRole.split(','))
+      var getRoutes = baseRoleGetRouters(permissionRouter, getRole.split(','))
+      console.log(getRoutes)
       // 3. 利用global属性，让渲染菜单的组件sideMenus.vue重新生成左侧菜单
       global.antRouter = fixedRouter.concat(getRoutes)
       // 4. 将生成好的路由addRoutes
@@ -37,14 +38,6 @@ router.beforeEach((to, from, next) => {
   }
 })
 
-function hasPermission(route, roles) {
-  if (route.meta && route.meta.roles) {
-    return roles.some(role => route.meta.roles.indexOf(role) >= 0)
-  } else {
-    return true
-  }
-}
-
 // 根据用户的角色取到该用户对应的路由
 function baseRoleGetRouters(allRoutes, roles) {
   // allRoutes是动态路由表
@@ -59,4 +52,12 @@ function baseRoleGetRouters(allRoutes, roles) {
     return false
   })
   return rightRoutes
+}
+
+function hasPermission(route, roles) {
+  if (route.meta && route.meta.roles) {
+    return roles.some(role => route.meta.roles.indexOf(role) >= 0)
+  } else {
+    return true
+  }
 }

@@ -43,7 +43,7 @@ export default {
   methods: {
     outSystem() {
       // 退出系统
-      localStorage.setItem('userRole', 'unload')
+      localStorage.setItem('userRole', '')
       // 跳转到登录页的时候顺便刷新
       window.location.href = window.location.origin + window.location.pathname
     }
