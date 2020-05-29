@@ -3,15 +3,7 @@
     <el-container>
       <!-- 左侧菜单 -->
       <el-aside class="slider_container">
-        <el-menu
-          class="sub_meuns_wapper"
-          mode="vertical"
-          unique-opened
-          :default-active="$route.path"
-          background-color="#304156"
-          text-color="#fff"
-          active-text-color="#409EFF"
-        >
+        <el-menu class="sub_meuns_wapper" mode="vertical" unique-opened :default-active="$route.path" background-color="#304156" text-color="#fff" active-text-color="#409EFF">
           <!-- 菜单组件 -->
           <side-menus :routes="getRoutes"></side-menus>
         </el-menu>
@@ -19,16 +11,8 @@
       <!-- 右侧内容区域 -->
       <el-container class="app_content">
         <el-header style="text-align: right; font-size: 12px">
-          <i
-            class="el-icon-setting"
-            style="margin-right: 15px"
-          ></i>
-          <el-button
-            @click="outSystem"
-            size="mini"
-            plain
-            type="primary"
-          >退出</el-button>
+          <i class="el-icon-setting" style="margin-right: 15px"></i>
+          <el-button @click="outSystem" size="mini" plain type="primary">退出</el-button>
         </el-header>
         <!-- 内容区域 -->
         <el-main>
@@ -42,13 +26,11 @@
 <script>
 // 左侧菜单组件
 import sideMenus from '@/components/sideMenus'
-// import { permissionRouter } from '@/router'
 export default {
   computed: {
     getRoutes() {
       return global.antRouter
     }
-
   },
   components: {
     sideMenus
@@ -59,7 +41,8 @@ export default {
     }
   },
   methods: {
-    outSystem() { // 退出系统
+    outSystem() {
+      // 退出系统
       localStorage.setItem('userRole', 'unload')
       // 跳转到登录页的时候顺便刷新
       window.location.href = window.location.origin + window.location.pathname
@@ -70,7 +53,6 @@ export default {
     // console.log(this.$route.path)
   }
 }
-
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
