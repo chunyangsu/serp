@@ -6,10 +6,9 @@ const _import = require('./router/_import_' + process.env.NODE_ENV) // Layout �
 var getRouter // 用来获取后台拿到的路由
 
 router.beforeEach((to, from, next) => {
-  // console.log(getRouter)
-  if (!getRouter) { // 不加这个判断，路由会陷入死循环
+  if (!getRouter) {
+    // 不加这个判断，路由会陷入死循环
     if (!getObjArr('router')) {
-      // console.log('beforeEach  getRouter')
       // 模拟请求后端返回路由表
       axios.get('http://localhost:8888/api/private/v1/routers/getRoutersList').then(response => {
         const {
@@ -43,18 +42,22 @@ function routerGo(to, next) {
   })
 }
 
-function saveObjArr(name, data) { // localStorage 存储数组对象的方法
+function saveObjArr(name, data) {
+  // localStorage 存储数组对象的方法
   localStorage.setItem(name, JSON.stringify(data))
 }
 
-function getObjArr(name) { // localStorage 获取数组对象的方法
+function getObjArr(name) {
+  // localStorage 获取数组对象的方法
   return JSON.parse(window.localStorage.getItem(name))
 }
 
-function filterAsyncRouter(asyncRouterMap) { // 遍历后台传来的路由字符串，转换为组件对象
+function filterAsyncRouter(asyncRouterMap) {
+  // 遍历后台传来的路由字符串，转换为组件对象
   const accessedRouters = asyncRouterMap.filter(route => {
     if (route.component) {
-      if (route.component === 'Layout') { // Layout组件特殊处理
+      if (route.component === 'Layout') {
+        // Layout组件特殊处理
         route.component = Layout
       } else {
         route.component = _import(route.component)
