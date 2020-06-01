@@ -15,7 +15,7 @@ import axios from 'axios'
 import '@/styles/index.css'
 // 引入全局文件
 import '@/utils/global'
-import '@/permission.js'
+import '@/promission.js'
 
 // 引入mock数据，关闭则注释该行
 require('./mock')

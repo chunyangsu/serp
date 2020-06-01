@@ -8,3 +8,5 @@ Mock.mock('http://localhost:8888/api/private/v1/products/getProductsList', 'get'
 Mock.mock('http://localhost:8888/api/private/v1/orders/getOrdersList', 'get', require('./json/orders'))
 // 用户列表数据
 Mock.mock('http://localhost:8888/api/private/v1/users/getUsersList', 'get', require('./json/users'))
+// 路由表数据
+Mock.mock('http://localhost:8888/api/private/v1/routers/getRoutersList', 'get', require('./json/routers'))

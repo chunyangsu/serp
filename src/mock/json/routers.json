@@ -1,0 +1,133 @@
+{
+  "data": {
+    "router": [{
+        "path": "",
+        "component": "Layout",
+        "redirect": "dashboard",
+        "children": [{
+          "path": "dashboard",
+          "component": "dashboard/index",
+          "meta": {
+            "title": "首页",
+            "icon": "dashboard"
+          }
+        }]
+      },
+      {
+        "path": "/example",
+        "component": "Layout",
+        "redirect": "/example/table",
+        "name": "Example",
+        "meta": {
+          "title": "案例",
+          "icon": "example"
+        },
+        "children": [{
+          "path": "table",
+          "name": "Table",
+          "component": "table/index",
+          "meta": {
+            "title": "表格",
+            "icon": "table"
+          }
+        }]
+      },
+      {
+        "path": "/basic",
+        "component": "Layout",
+        "children": [{
+          "path": "index",
+          "name": "Basic",
+          "component": "basic/index",
+          "meta": {
+            "title": "基础数据",
+            "icon": "basic"
+          }
+        }]
+      },
+      {
+        "path": "/purchase",
+        "component": "Layout",
+        "name": "Purchase",
+        "meta": {
+          "title": "采购管理",
+          "icon": "el-icon-menu"
+        },
+        "children": [{
+          "path": "PurchaseInquiry",
+          "component": "purchase/PurchaseInquiry",
+          "name": "PurchaseInquiry",
+          "meta": {
+            "title": "采购询价书",
+            "icon": "el-icon-menu"
+          }
+        }, {
+          "path": "SupplierQuotation",
+          "component": "purchase/SupplierQuotation",
+          "name": "SupplierQuotation",
+          "meta": {
+            "title": "供应商报价单",
+            "icon": "el-icon-menu"
+          }
+        }]
+      },
+      {
+        "path": "/product",
+        "component": "Layout",
+        "name": "Product",
+        "meta": {
+          "title": "产品中心",
+          "icon": "el-icon-menu"
+        },
+        "children": [{
+            "path": "ProductManage",
+            "component": "product/ProductManage/ProductManage",
+            "name": "ProductManage",
+            "meta": {
+              "title": "产品管理",
+              "icon": "el-icon-menu"
+            }
+          }, {
+            "path": "BrandManage",
+            "component": "product/BrandManage/BrandManage",
+            "name": "BrandManage",
+            "meta": {
+              "title": "品牌管理",
+              "icon": "el-icon-menu"
+            }
+          },
+          {
+            "path": "/product/param",
+            "component": "product/param/param",
+            "name": "param",
+            "meta": {
+              "title": "规格参数",
+              "icon": "el-icon-menu"
+            },
+            "children": [{
+              "path": "SpecManage",
+              "component": "product/param/SpecManage/SpecManage",
+              "name": "SpecManage",
+              "meta": {
+                "title": "规格管理",
+                "icon": "el-icon-menu"
+              }
+            }, {
+              "path": "UnitManage",
+              "component": "product/param/UnitManage/UnitManage",
+              "name": "UnitManage",
+              "meta": {
+                "title": "规格管理",
+                "icon": "el-icon-menu"
+              }
+            }]
+          }
+        ]
+      }
+    ]
+  },
+  "meta": {
+    "msg": "获取成功",
+    "status": 200
+  }
+}
