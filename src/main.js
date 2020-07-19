@@ -17,6 +17,9 @@ import '@/styles/index.css'
 import '@/utils/global'
 import '@/promission.js'
 
+import XLSX from 'xlsx'
+Vue.use(XLSX)
+
 // 引入mock数据，关闭则注释该行
 require('./mock')
 // 控制路由表的js文件
